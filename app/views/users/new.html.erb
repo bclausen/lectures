@@ -14,10 +14,11 @@
 		<% end %>
 		
 	</table>
-
+	
 	<h2  align="center">Neuer Benutzer</h2>
 		<%= form_for @user do |f| %>
 			<p align="center">
+				<%= @user.errors.full_messages %>
 			<%= f.label :Benutzername %>: <%= f.text_field :nickname %></br>
 			<%= f.label :passwort %>: <%= f.text_field :password %></br>
 			<%= f.label :passwortbestätigung %>: <%= f.text_field :password_confirmation %></br>
