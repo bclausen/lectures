@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   get "lectures/:id"=>"lectures#edit"
   patch "lectures/:id"=>"lectures#patch"
 
+  get "signup"=>"users#new"
 end
