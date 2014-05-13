@@ -11,5 +11,8 @@ Rails.application.routes.draw do
   get "lectures/:id"=>"lectures#edit"
   patch "lectures/:id"=>"lectures#patch"
 
-  get "signup"=>"users#new"
+  get "signup"=>"users#new",:as=>:users
+  post "signup"=>"users#post"
+
+
 end

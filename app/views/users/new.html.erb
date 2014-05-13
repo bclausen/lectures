@@ -1,1 +1,26 @@
 <h1 align="center"> Anmeldung </h1>
+
+<table border="1" align="center" cellspacing="5" cellpadding="5" style="border-collapse:collapse;">
+		<tr>	
+			<td bgcolor="grey" align="center"><font color="white"><b>Benutzername</b></td>
+			<td bgcolor="grey" align="center"></td>
+			<td bgcolor="grey" align="center"></td>
+		</tr>
+			<% @users.each do |user| %>
+		<tr>	
+			<td align="center"><%= user.nickname %></td>
+
+		</tr>
+		<% end %>
+		
+	</table>
+
+	<h2  align="center">Neuer Benutzer</h2>
+		<%= form_for @user do |f| %>
+			<p align="center">
+			<%= f.label :Benutzername %>: <%= f.text_field :nickname %></br>
+			<%= f.label :passwort %>: <%= f.text_field :password %></br>
+			<%= f.label :passwortbestätigung %>: <%= f.text_field :password_confirmation %></br>
+			<%= f.submit "Save" %>
+			</p>
+		<% end %>
