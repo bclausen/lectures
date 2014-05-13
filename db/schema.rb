@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2) do
+ActiveRecord::Schema.define(version: 3) do
 
   create_table "lecturers", force: true do |t|
     t.string "lastname"
@@ -26,5 +26,11 @@ ActiveRecord::Schema.define(version: 2) do
   create_table "lectures", force: true do |t|
     t.string "title"
   end
+
+  create_table "users", force: true do |t|
+    t.string "nickname"
+  end
+
+  add_index "users", ["nickname"], name: "index_users_on_nickname", unique: true
 
 end

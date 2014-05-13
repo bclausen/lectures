@@ -1,7 +1,7 @@
 class CreateUsersTable < ActiveRecord::Migration
-	def self.change
+	def change
 		
-		create_table(users) do |t|
+		create_table(:users) do |t|
 			t.string :nickname
 		end
 
