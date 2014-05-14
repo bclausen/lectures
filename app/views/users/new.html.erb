@@ -16,9 +16,17 @@
 	</table>
 	
 	<h2  align="center">Neuer Benutzer</h2>
+		<p  align="center">Hinweis: Das Passwort muss 6 Zeichen lang sein.</p>
+
 	<table align="center">
 		<%= form_for @user do |f| %>
 			<!-- <p align="center"> -->
+		<tr>
+			<td colspan="2"><% @user.errors.full_messages.each do |msg|%>
+					<%= msg %>
+				<% end %>
+			</td>
+		</tr>	
 		<tr>
 			<td align="right"><%= f.label :Benutzername %>:</td> <td><%= f.text_field :nickname %></td>
 		</tr>

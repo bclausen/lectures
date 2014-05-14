@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   patch "lectures/:id"=>"lectures#patch"
 
   get "signup"=>"users#new",:as=>:users
-  post "signup"=>"users#post"
+  post "signup"=>"users#create"
 
 
 end
