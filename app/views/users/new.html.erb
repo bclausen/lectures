@@ -16,12 +16,21 @@
 	</table>
 	
 	<h2  align="center">Neuer Benutzer</h2>
+	<table align="center">
 		<%= form_for @user do |f| %>
-			<p align="center">
-				<%= @user.errors.full_messages %>
-			<%= f.label :Benutzername %>: <%= f.text_field :nickname %></br>
-			<%= f.label :passwort %>: <%= f.text_field :password %></br>
-			<%= f.label :passwortbestätigung %>: <%= f.text_field :password_confirmation %></br>
-			<%= f.submit "Save" %>
-			</p>
+			<!-- <p align="center"> -->
+		<tr>
+			<td align="right"><%= f.label :Benutzername %>:</td> <td><%= f.text_field :nickname %></td>
+		</tr>
+		<tr>
+			<td align="right"><%= f.label :passwort %>:</td> <td><%= f.text_field :password %></td>
+		</tr>
+		<tr>
+			<td align="right"><%= f.label :passwortbestätigung %>:</td> <td><%= f.text_field :password_confirmation %></td>
+		</tr>
+		<tr>
+			<td></td><td><%= f.submit "Save" %></td>
+		</tr>
+			<!-- </p> -->
 		<% end %>
+	</table>

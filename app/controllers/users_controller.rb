@@ -8,14 +8,14 @@ class UsersController < ApplicationController
 		nick = params[:user][:nickname]
 		pw = params[:user][:password]
 		pw_conf = params[:user][:password_confirmation]
-		if User.new(:nickname=> nick,:password=> pw).authenticate pw_conf then
-			User.new(:nickname=> nick,:password=> pw).save
+		@user = User.new(:nickname=> nick,:password=> pw)
+		if @user.save then
+			redirect_to users_path,
+			notice: "Ihr Benutzerkonto wurde angelegt!"
 		else
-
-			User.new(:nickname=> nick,:password=> pw).save
-			# @user = user
+			render "new"
 		end
-		redirect_to users_path
+		# redirect_to users_path
 	end
 
 	# def new
