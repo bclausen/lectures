@@ -20,8 +20,12 @@ class UsersController < ApplicationController
 		# redirect_to users_path
 	end
 
-	# def new
-	# 	@users=User.new
-	# end
+	def delete
+		
+	end
+
+	def edit
+		
+	end
 
 end

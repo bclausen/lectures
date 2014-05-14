@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   get "signup"=>"users#new",:as=>:users
   post "signup"=>"users#create"
+  delete"users/:id"=>"users#delete"
+  get "users/:id"=>"users#edit"
 
 
 end

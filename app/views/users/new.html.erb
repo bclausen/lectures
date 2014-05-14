@@ -2,17 +2,23 @@
 
 <table border="1" align="center" cellspacing="5" cellpadding="5" style="border-collapse:collapse;">
 		<tr>	
-			<td bgcolor="grey" align="center"><font color="white"><b>Benutzername</b></td>
-			<td bgcolor="grey" align="center"></td>
-			<td bgcolor="grey" align="center"></td>
+			<td bgcolor="grey" align="center" colspan="5"><font color="white"><b>Angelegte Benutzer</b></td>
 		</tr>
+		<tr>
+			<!-- Die User sollen in einer Tabelle mit 5 Spalten dargestellt werden -->
+			<!-- Nach jeweils 5 Spalten wird eine neue Zeile erstellt. -->
+			<% spalte = 0 %> 	
 			<% @users.each do |user| %>
-		<tr>	
-			<td align="center"><%= user.nickname %></td>
-
-		</tr>
+				<% if spalte%5 != 0 then %>
+					<td align="center"><%= user.nickname %></td>
+				<% else %>
+						</tr>
+						<tr>
+						<td align="center"><%= user.nickname %></td>
+				<% end %>
+				<% spalte = spalte + 1 %>
 		<% end %>
-		
+		</tr>
 	</table>
 	
 	<h2  align="center">Neuer Benutzer</h2>
@@ -20,11 +26,13 @@
 
 	<table align="center">
 		<%= form_for @user do |f| %>
-			<!-- <p align="center"> -->
 		<tr>
-			<td colspan="2"><% @user.errors.full_messages.each do |msg|%>
-					<%= msg %>
+			<!-- In der folgenden Zelle werden alle Fehler ausgegeben. -->
+			<td colspan="2">
+				<font color="red"><% @user.errors.full_messages.each do |msg|%>
+					<%= msg %>.
 				<% end %>
+				</font>
 			</td>
 		</tr>	
 		<tr>
