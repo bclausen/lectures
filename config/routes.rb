@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root :to => "users#new"
+
   get "lecturers" => "lecturers#get"
   post "lecturers" => "lecturers#post"
   delete"lecturers/:id"=>"lecturers#delete",:as=>:lecturer
