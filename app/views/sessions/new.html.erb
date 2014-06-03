@@ -1,0 +1,8 @@
+<h1>Anmelden</h1>
+<%= form_for :sessions, url: sessions_path do |f| %>
+	<%= f.label :Benutzername %>:
+	<%= f.text_field :nickname %>
+	<%= f.label :passwort %>:
+	<%= f.text_field :password %>
+	<%= f.submit "Save" %>
+<% end %>

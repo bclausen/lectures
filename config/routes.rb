@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root :to => "users#new"
+  root :to => "sessions#new"
 
   get "lecturers" => "lecturers#get"
   post "lecturers" => "lecturers#post"
@@ -18,5 +18,5 @@ Rails.application.routes.draw do
   delete"users/:id"=>"users#delete"
   get "users/:id"=>"users#edit"
 
-
+  get "signin" => "sessions#new", :as => :sessions
 end
