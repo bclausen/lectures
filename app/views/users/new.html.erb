@@ -29,6 +29,7 @@
 		<tr>
 			<!-- In der folgenden Zelle werden alle Fehler ausgegeben. -->
 			<td colspan="2">
+				<%= @hinweis %>
 				<font color="red"><% @user.errors.full_messages.each do |msg|%>
 					<%= msg %>.
 				<% end %>

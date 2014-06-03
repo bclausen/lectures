@@ -11,8 +11,7 @@ class UsersController < ApplicationController
 		@user = User.new(:nickname=> nick,:password=> pw)
 		if @user.save then  #Die Methode save wird ausgeführt und der Rückgabewert
 							#bedingt die Verzweigung
-			redirect_to users_path,
-			notice: "Ihr Benutzerkonto wurde angelegt!"
+			redirect_to users_path
 		else
 			@users = User.all
 			render "new"
